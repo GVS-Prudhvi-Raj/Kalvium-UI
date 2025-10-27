@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalvium Dojo</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Font 'Inter' --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load Lucide icons --><script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+      // Configure Tailwind to use 'Inter' as the default font
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    
+    <style>
+      /* Set a default size for lucide icons */
+      .lucide {
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
+      }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-white to-red-50 font-sans min-h-screen">
+
+    <!-- Sticky Navigation Bar --><nav class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand/Logo --><div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-red-600">Kalvium</a>
+                    <span class="ml-4 text-gray-400">/</span>
+                    <span class="ml-4 text-xl font-semibold text-gray-800">Dojo</span>
+                </div>
+                <!-- Right Side - Search and Profile --><div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <span class="sr-only">Search</span>
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    <button class="p-2 rounded-full text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <span class="sr-only">View profile</span>
+                        <i data-lucide="user-circle-2" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area --><main class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- Coding Workouts Card --><div class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+                <i data-lucide="code-2" class="w-7 h-7 text-red-600"></i>
+                Coding Workouts
+            </h2>
+
+            <!-- List of workouts -->
+            <div class="space-y-6">
+
+                <!-- C++ -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">C++</h3>
+                        <div class="flex items-center gap-4 mt-2">
+                            <!-- Belt Progress Squares -->
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                            </div>
+                            <!-- Belt Name -->
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-700 border border-gray-200">White Belt</span>
+                        </div>
+                    </div>
+                    <a href="#" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-5 py-2.5 bg-red-600 text-white font-medium rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        Start Workout
+                    </a>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <!-- Python -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Python</h3>
+                        <div class="flex items-center gap-4 mt-2">
+                            <!-- Belt Progress Squares -->
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-5 h-5 rounded-md bg-yellow-400"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                            </div>
+                            <!-- Belt Name -->
+                            <span class="flex items-center gap-1 text-xs font-medium px-2.5 py-0.5 rounded-full bg-yellow-100 text-yellow-700 border border-yellow-200">
+                                Yellow Belt
+                                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <a href="#" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-5 py-2.5 bg-red-600 text-white font-medium rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        Start Workout
+                    </a>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <!-- Java -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Java</h3>
+                        <div classV="flex items-center gap-4 mt-2">
+                            <!-- Belt Progress Squares -->
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                            </div>
+                            <!-- Belt Name -->
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-700 border border-gray-200">White Belt</span>
+                        </div>
+                    </div>
+                    <a href="#" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-5 py-2.5 bg-red-600 text-white font-medium rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        Start Workout
+                    </a>
+                </div>
+
+                <hr class="border-gray-100">
+
+                <!-- Javascript -->
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div class="flex-1">
+                        <h3 class="text-lg font-semibold text-gray-800">Javascript</h3>
+                        <div class="flex items-center gap-4 mt-2">
+                            <!-- Belt Progress Squares -->
+                            <div class="flex items-center gap-1.5">
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                                <div class="w-5 h-5 rounded-md bg-gray-200"></div>
+                            </div>
+                            <!-- Belt Name -->
+                            <span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-700 border border-gray-200">White Belt</span>
+                        </div>
+                    </div>
+                    <a href="#" class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-5 py-2.5 bg-red-600 text-white font-medium rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        Start Workout
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Script to initialize Lucide icons --><script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+

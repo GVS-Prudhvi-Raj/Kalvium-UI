@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalvium Showcase</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Font 'Inter' --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load Lucide icons --><script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+      // Configure Tailwind to use 'Inter' as the default font
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    
+    <style>
+      /* Set a default size for lucide icons */
+      .lucide {
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
+      }
+      /* Custom styles for active tabs */
+      .tab-active {
+        border-color: #DC2626; /* red-600 */
+        color: #DC2626; /* red-600 */
+      }
+      .tab-inactive {
+        border-color: transparent;
+        color: #6B7280; /* gray-500 */
+      }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-white to-red-50 font-sans min-h-screen">
+
+    <!-- Sticky Navigation Bar --><nav class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand/Logo --><div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-red-600">Kalvium</a>
+                    <span class="ml-4 text-gray-400">/</span>
+                    <span class="ml-4 text-xl font-semibold text-gray-800">Showcase</span>
+                </div>
+                <!-- Right Side - Search and Profile --><div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <span class="sr-only">Search</span>
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    <button class="p-2 rounded-full text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <span class="sr-only">View profile</span>
+                        <i data-lucide="user-circle-2" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area --><main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+
+            <!-- Left Column: Profile Card -->
+            <aside class="lg:col-span-1 lg:sticky lg:top-24">
+                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 flex flex-col items-center text-center">
+                    <!-- Profile Picture -->
+                    <img class="w-28 h-28 rounded-full border-4 border-red-100 shadow-lg" src="https://placehold.co/112x112/FEE2E2/DC2626?text=G" alt="GANTI VENKATA SAI PRUDHVI RAJ">
+                    
+                    <h2 class="text-xl font-bold text-gray-900 mt-4">GANTI VENKATA SAI PRUDHVI RAJ</h2>
+                    <p class="text-sm text-gray-500 mt-1">Class of 2029</p>
+                    
+                    <div class="w-full border-t border-gray-100 my-4"></div>
+                    
+                    <div class="text-left space-y-3 w-full">
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="graduation-cap" class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"></i>
+                            <p class="text-sm text-gray-700">B.Tech in Computer Science and Engineering (AI and Future Technologies)</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i data-lucide="school" class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5"></i>
+                            <p class="text-sm text-gray-700">Alliance University</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full border-t border-gray-100 my-4"></div>
+
+                    <button class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-red-600 text-white font-medium rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        Connect
+                        <i data-lucide="rss" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Right Column: Showcase Content -->
+            <div class="lg:col-span-3 space-y-6">
+
+                <!-- Skills Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
+                        <i data-lucide="award" class="w-6 h-6 text-red-600"></i>
+                        Skills
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Node.js Skill -->
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Node JS</h4>
+                                <p class="text-sm text-gray-500">0 mins problems solved</p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                                Level
+                            </span>
+                        </div>
+                        <!-- Java Skill -->
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <div>
+                                <h4 class="font-semibold text-gray-800">Java</h4>
+                                <p class="text-sm text-gray-500">0 mins problems solved</p>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                                <i data-lucide="shield" class="w-3.5 h-3.5"></i>
+                                Level
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects & Certifications Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
+                        <i data-lucide="folder-kanban" class="w-6 h-6 text-red-600"></i>
+                        Projects & Certifications
+                    </h3>
+                    <!-- Tabs -->
+                    <div class="mb-4">
+                        <div class="flex border-b border-gray-200">
+                            <button id="cert-tab-all" class="px-4 py-2 text-sm font-medium border-b-2 tab-active">All</button>
+                            <button id="cert-tab-others" class="px-4 py-2 text-sm font-medium border-b-2 tab-inactive hover:text-gray-700">Others</button>
+                        </div>
+                    </div>
+                    <!-- Tab Content -->
+                    <div id="cert-content-all">
+                        <!-- Certificate Item -->
+                        <div class="flex flex-col sm:flex-row items-start gap-4">
+                            <img src="https://placehold.co/150x100/FEE2E2/DC2626?text=Certificate" alt="Drone Workshop Certificate" class="w-full sm:w-40 h-auto rounded-lg border border-gray-200 object-cover">
+                            <div>
+                                <h4 class="text-lg font-semibold text-gray-800">Drone engineering Workshop Completion</h4>
+                                <p class="text-sm text-gray-600 mt-1">Led participants in designing, building, and programming custom drones. Provided hands-on training in flight mechanics, electronics, and...</p>
+                                <a href="#" class="inline-flex items-center gap-1 text-sm font-medium text-red-600 hover:text-red-700 mt-3">
+                                    View Certificate
+                                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cert-content-others" class="hidden">
+                        <!-- Empty State for Others -->
+                        <div class="flex flex-col items-center justify-center text-center text-gray-500 py-8">
+                            <div class="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                                <i data-lucide="folder-search" class="w-8 h-8"></i>
+                            </div>
+                            <p class="font-medium text-gray-700 mt-4">No Other Projects</p>
+                            <p class="text-sm mt-1">This section is for projects you add yourself.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Internship Experience Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-red-600"></i>
+                        Internship Experience
+                    </h3>
+                    <!-- Tabs -->
+                    <div class="mb-4">
+                        <div class="flex border-b border-gray-200">
+                            <button id="intern-tab-kalvium" class="px-4 py-2 text-sm font-medium border-b-2 tab-inactive hover:text-gray-700">Kalvium-Managed Internships</button>
+                            <button id="intern-tab-other" class="px-4 py-2 text-sm font-medium border-b-2 tab-active">Other Internships</button>
+                        </div>
+                    </div>
+                    <!-- Tab Content -->
+                    <div id="intern-content-kalvium" class="hidden">
+                        <!-- Empty State for Kalvium-Managed -->
+                        <div class="flex flex-col items-center justify-center text-center text-gray-500 py-8">
+                            <div class="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                                <i data-lucide="briefcase" class="w-8 h-8"></i>
+                            </div>
+                            <p class="font-medium text-gray-700 mt-4">No Kalvium-Managed Internships</p>
+                            <p class="text-sm mt-1 text-center max-w-sm">Internships powered by Kalvium are automatically fetched and displayed. If you have participated in any Kalvium internships, they will appear here.</p>
+                        </div>
+                    </div>
+                    <div id="intern-content-other">
+                        <!-- Internship Item -->
+                        <div>
+                            <span class="text-xs font-medium text-gray-500">LEADS AND FEEDS</span>
+                            <h4 class="text-lg font-semibold text-gray-800 mt-1">Social media manager</h4>
+                            <p class="text-sm text-gray-500">Aug 2025 - Present</p>
+                            <p class="text-sm text-gray-600 mt-2">Developed and executed social media strategies and SEO practices to increase brand engagement, followers, and organic search ranking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Positions of Responsibility Card -->
+                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <h3 class="text-xl font-bold text-gray-900 flex items-center gap-2 mb-4">
+                        <i data-lucide="user-check" class="w-6 h-6 text-red-600"></i>
+                        Positions of Responsibility
+                    </h3>
+                    <!-- Empty State -->
+                    <div class="flex flex-col items-center justify-center text-center text-gray-500 py-8">
+                        <div class="w-16 h-16 rounded-full bg-red-100 text-red-600 flex items-center justify-center">
+                            <i data-lucide="podium" class="w-8 h-8"></i>
+                        </div>
+                        <p class="font-medium text-gray-700 mt-4">No Positions Added</p>
+                        <p class="text-sm mt-1">It seems you haven't added any Positions of Responsibility yet.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Script to initialize Lucide icons and handle tabs --><script>
+        lucide.createIcons();
+
+        // Helper function for tab switching
+        function setupTabs(tabButtons, tabContents) {
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Deactivate all buttons
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('tab-active');
+                        btn.classList.add('tab-inactive');
+                    });
+                    // Hide all content
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+
+                    // Activate the clicked button
+                    button.classList.add('tab-active');
+                    button.classList.remove('tab-inactive');
+
+                    // Show the corresponding content
+                    const contentId = button.id.replace('tab', 'content');
+                    document.getElementById(contentId).classList.remove('hidden');
+                });
+            });
+        }
+
+        // Setup Projects & Certifications Tabs
+        const certTabs = [
+            document.getElementById('cert-tab-all'),
+            document.getElementById('cert-tab-others')
+        ];
+        const certContents = [
+            document.getElementById('cert-content-all'),
+            document.getElementById('cert-content-others')
+        ];
+        setupTabs(certTabs, certContents);
+
+        // Setup Internship Experience Tabs
+        const internTabs = [
+            document.getElementById('intern-tab-kalvium'),
+            document.getElementById('intern-tab-other')
+        ];
+        const internContents = [
+            document.getElementById('intern-content-kalvium'),
+            document.getElementById('intern-content-other')
+        ];
+        setupTabs(internTabs, internContents);
+
+    </script>
+</body>
+</html>
+

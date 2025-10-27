@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Kalvium Markers</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Google Font 'Inter' --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Load Lucide icons --><script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+      // Configure Tailwind to use 'Inter' as the default font
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    
+    <style>
+      /* Set a default size for lucide icons */
+      .lucide {
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
+      }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-white to-red-50 font-sans min-h-screen">
+
+    <!-- Sticky Navigation Bar --><nav class="bg-white/90 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Brand/Logo --><div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-red-600">Kalvium</a>
+                    <span class="ml-4 text-gray-400">/</span>
+                    <span class="ml-4 text-xl font-semibold text-gray-800">Markers</span>
+                </div>
+                <!-- Right Side - Search and Profile --><div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <span class="sr-only">Search</span>
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    <button class="p-2 rounded-full text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <span class="sr-only">View profile</span>
+                        <i data-lucide="user-circle-2" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area --><main class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- Filter Bar -->
+        <div class="bg-white p-5 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Squad Filter -->
+                <div>
+                    <label for="squad" class="block text-xs font-medium text-gray-600 mb-1">Squad</label>
+                    <select id="squad" name="squad" class="block w-full px-3 py-2 text-gray-900 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors">
+                        <option value="squad-113" selected>Squad 113</option>
+                        <option value="squad-114">Squad 114</option>
+                        <option value="squad-115">Squad 115</option>
+                    </select>
+                </div>
+                <!-- Marker Type Filter -->
+                <div>
+                    <label for="marker-type" class="block text-xs font-medium text-gray-600 mb-1">Marker Type</label>
+                    <select id="marker-type" name="marker-type" class="block w-full px-3 py-2 text-gray-900 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors">
+                        <option value="key-markers" selected>Key Markers</option>
+                        <option value="all-markers">All Markers</option>
+                        <option value="course-markers">Course Markers</option>
+                    </select>
+                </div>
+                <!-- Search Filter -->
+                <div>
+                    <label for="search" class="block text-xs font-medium text-gray-600 mb-1">Search Markers</label>
+                    <div class="relative">
+                        <input type="search" id="search" name="search" placeholder="Search markers..." class="block w-full pl-10 pr-3 py-2 text-gray-900 border border-gray-300 rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i data-lucide="search" class="text-gray-400 w-5 h-5"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Markers Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Marker Card 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 flex flex-col">
+                <h3 class="text-lg font-semibold text-gray-800">Professionalism score quarterly average</h3>
+                <p class="text-xs font-mono text-gray-400 mt-1" title="Slug">professionalism_score_q1_sep_20_2025_v1</p>
+                
+                <div class="my-6 text-center">
+                    <span class="text-6xl font-bold text-red-600">0.48</span>
+                    <span class="text-xl font-medium text-red-500 ml-1">score</span>
+                </div>
+                
+                <div class="flex items-center gap-2 text-sm text-gray-500 mt-auto pt-4 border-t border-gray-100">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    <span>Last Updated: Oct 26, 2025 11:05 PM</span>
+                </div>
+            </div>
+
+            <!-- Marker Card 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 flex flex-col">
+                <h3 class="text-lg font-semibold text-gray-800">Course score</h3>
+                <p class="text-xs font-mono text-gray-400 mt-1" title="Slug">course_score</p>
+                
+                <div class="my-6 text-center">
+                    <span class="text-6xl font-bold text-gray-700">0</span>
+                </div>
+                
+                <div class="flex items-center gap-2 text-sm text-gray-500 mt-auto pt-4 border-t border-gray-100">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    <span>Last Updated: Oct 27, 2025 12:22 AM</span>
+                </div>
+            </div>
+
+            <!-- Marker Card 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 flex flex-col">
+                <h3 class="text-lg font-semibold text-gray-800">Coding level</h3>
+                <p class="text-xs font-mono text-gray-400 mt-1" title="Slug">coding_level</p>
+                
+                <div class="my-6 text-center">
+                    <span class="text-6xl font-bold text-gray-700">0</span>
+                </div>
+                
+                <div class="flex items-center gap-2 text-sm text-gray-500 mt-auto pt-4 border-t border-gray-100">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    <span>Last Updated: Sep 30, 2025 01:14 PM</span>
+                </div>
+            </div>
+
+            <!-- Marker Card 4 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 flex flex-col">
+                <h3 class="text-lg font-semibold text-gray-800">Project Score</h3>
+                <p class="text-xs font-mono text-gray-400 mt-1" title="Slug">project_score</p>
+                
+                <div class="my-6 text-center">
+                    <span class="text-6xl font-bold text-gray-700">0</span>
+                </div>
+                
+                <div class="flex items-center gap-2 text-sm text-gray-500 mt-auto pt-4 border-t border-gray-100">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    <span>Last Updated: Sep 30, 2025 01:14 PM</span>
+                </div>
+            </div>
+
+            <!-- Marker Card 5 -->
+            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 flex flex-col">
+                <h3 class="text-lg font-semibold text-gray-800">Communication Score</h3>
+                <p class="text-xs font-mono text-gray-400 mt-1" title="Slug">communication_score</p>
+                
+                <div class="my-6 text-center">
+                    <span class="text-6xl font-bold text-gray-700">0</span>
+                </div>
+                
+                <div class="flex items-center gap-2 text-sm text-gray-500 mt-auto pt-4 border-t border-gray-100">
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    <span>Last Updated: Sep 30, 2025 01:14 PM</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Script to initialize Lucide icons --><script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
