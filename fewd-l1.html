@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEWD - Lesson 1.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      .lucide {
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
+      }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-white to-red-50 font-sans min-h-screen">
+
+    <nav class="bg-white/90 backdrop-blur-sm shadow-sm sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-red-600">Kalvium</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 rounded-full text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <span class="sr-only">Search</span>
+                        <i data-lucide="search" class="w-5 h-5"></i>
+                    </button>
+                    <button class="p-2 rounded-full text-gray-600 hover:text-red-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <span class="sr-only">View profile</span>
+                        <i data-lucide="user-circle-2" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-screen-xl mx-auto p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row gap-8">
+        
+        <!-- Sticky Sidebar -->
+        <aside class="w-full lg:w-1/4 lg:sticky top-24 h-fit">
+            <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <a href="FEWD.html" class="flex items-center text-sm font-medium text-gray-600 hover:text-red-600 mb-4 transition-colors">
+                    <i data-lucide="chevron-left" class="w-4 h-4 mr-1"></i>
+                    Back to Module 1
+                </a>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Module 1: HTML, CSS Basics</h3>
+                <nav class="space-y-2">
+                    <a href="fewd-l1.html" class="flex items-center p-3 rounded-xl bg-red-100 text-red-700 font-medium transition-colors hover:bg-red-200">
+                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-red-200 text-red-700 rounded-full mr-3">1.1</span>
+                        Course Overview
+                    </a>
+                    <a href="#" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-gray-100 text-gray-600 rounded-full mr-3">1.2</span>
+                        What is Frontend?
+                    </a>
+                    <a href="#" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-gray-100 text-gray-600 rounded-full mr-3">1.3</span>
+                        Building a Hobbies Page
+                    </a>
+                    <a href="#" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-gray-100 text-gray-600 rounded-full mr-3">1.4</span>
+                        Setting up Environment
+                    </a>
+                    <a href="#" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-gray-100 text-gray-600 rounded-full mr-3">1.5</span>
+                        Intro to Git & GitHub I
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1">
+            <!-- Header -->
+            <div class="mb-6">
+                <div class="flex items-center mb-2">
+                    <span class="flex items-center justify-center w-10 h-10 text-lg font-bold bg-red-600 text-white rounded-full mr-4">1.1</span>
+                    <h1 class="text-3xl font-bold text-gray-900">Course Overview & Orientation</h1>
+                </div>
+            </div>
+
+            <!-- This is the content that will be animated -->
+            <div id="content-wrapper">
+
+                <!-- Choice Screen (Visible by default) -->
+                <div id="choice-screen">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- UPDATED: This is now a link to the new page -->
+                        <a href="fewd-l1-content.html" class="flex flex-col items-center justify-center bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 text-center hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                            <i data-lucide="book-open" class="w-16 h-16 text-red-500 mb-4"></i>
+                            <h2 class="text-2xl font-semibold text-gray-800">Lesson</h2>
+                            <p class="text-gray-600">Start the learning unit</p>
+                        </a>
+                        <button class="flex flex-col items-center justify-center bg-white p-8 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100 text-center text-gray-400 cursor-not-allowed" disabled>
+                            <i data-lucide="clipboard-check" class="w-16 h-16 text-gray-300 mb-4"></i>
+                            <h2 class="text-2xl font-semibold text-gray-500">Revision Notes</h2>
+                            <p class="text-gray-400">(Not available yet)</p>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Lesson Content has been moved to fewd-l1-content.html -->
+
+            </div>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+        // All animation Javascript has been removed
+    </script>
+</body>
+</html>
+
