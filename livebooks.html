@@ -87,52 +87,47 @@
 
             <!-- Main Livebooks Content --><div class="lg:col-span-3">
                 
-                <!-- This section has been removed
-                <section id="bookmarked-section" class="mb-10 hidden">
-                    ...
-                </section>
-                -->
-
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Semester 1</h2>
                 
                 <!-- All cards will now appear in this single grid -->
                 <div id="livebook-cards-container" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
-                    <!-- Livebook Card Template --><script type="text/template" id="livebook-card-template">
-                        <div class="bg-white p-5 rounded-xl shadow-xl shadow-gray-200/60 border border-gray-100 transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1">
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-[iconBgClass] text-[iconColorClass]">
-                                    <i data-lucide="[icon]"></i>
+                    <!-- Livebook Card Template -->
+                    <!-- UPDATED: The template is now an anchor <a> tag with dynamic [href] and [target] -->
+                    <script type="text/template" id="livebook-card-template">
+                        <a href="[href]" target="[target]" class="block transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1">
+                            <div class="bg-white p-5 rounded-xl shadow-xl shadow-gray-200/60 border border-gray-100 h-full flex flex-col">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="w-10 h-10 flex items-center justify-center rounded-lg bg-[iconBgClass] text-[iconColorClass]">
+                                        <i data-lucide="[icon]"></i>
+                                    </div>
+                                    <button class="p-1 -m-1 rounded-full transition-colors [bookmarkClass]" onclick="toggleBookmark(event, '[title]')">
+                                        <i data-lucide="bookmark" class="w-5 h-5 [iconFillClass]"></i>
+                                    </button>
                                 </div>
-                                <button class="p-1 -m-1 rounded-full transition-colors [bookmarkClass]" onclick="toggleBookmark(event, '[title]')">
-                                    <i data-lucide="bookmark" class="w-5 h-5 [iconFillClass]"></i>
-                                </button>
-                            </div>
-                            <h3 class="text-base font-semibold text-gray-800 mb-1">[title]</h3>
-                            <p class="text-sm text-gray-500 mb-4">[description]</p>
-                            
-                            <!-- Progress Bar --><div class="w-full bg-gray-200 rounded-full h-2 mb-4">
-                                <div class="bg-red-500 h-2 rounded-full" style="width: [progress]%;"></div>
-                            </div>
-                            <div class="flex items-center justify-between text-xs text-gray-600">
-                                <div class="flex items-center space-x-3">
-                                    <span class="flex items-center gap-1">
-                                        <i data-lucide="book" class="w-4 h-4 text-gray-400"></i> [read]
-                                    </span>
-                                    <span class="flex items-center gap-1">
-                                        <i data-lucide="layers" class="w-4 h-4 text-gray-400"></i> [projects]
-                                    </span>
-                                    <span class="flex items-center gap-1">
-                                        <i data-lucide="check-circle" class="w-4 h-4 text-gray-400"></i> [completed]
-                                    </span>
+                                <h3 class="text-base font-semibold text-gray-800 mb-1">[title]</h3>
+                                <p class="text-sm text-gray-500 mb-4 flex-grow">[description]</p>
+                                
+                                <!-- Progress Bar --><div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                                    <div class="bg-red-500 h-2 rounded-full" style="width: [progress]%;"></div>
                                 </div>
-                                <span class="font-semibold text-red-600">[progress]%</span>
+                                <div class="flex items-center justify-between text-xs text-gray-600">
+                                    <div class="flex items-center space-x-3">
+                                        <span class="flex items-center gap-1">
+                                            <i data-lucide="book" class="w-4 h-4 text-gray-400"></i> [read]
+                                        </span>
+                                        <span class="flex items-center gap-1">
+                                            <i data-lucide="layers" class="w-4 h-4 text-gray-400"></i> [projects]
+                                        </span>
+                                        <span class="flex items-center gap-1">
+                                            <i data-lucide="check-circle" class="w-4 h-4 text-gray-400"></i> [completed]
+                                        </span>
+                                    </div>
+                                    <span class="font-semibold text-red-600">[progress]%</span>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </script>
-
-                    <!-- Dynamically loaded Livebook Cards (now combined) -->
-                    <!-- <div id="livebook-cards-container"></div> --> <!-- This was moved up to wrap the template -->
 
                 </div>
             </div>
@@ -140,8 +135,8 @@
     </main>
 
     <!-- Script to initialize Lucide icons and load content --><script>
+        // UPDATED: Added href and target properties to each object
         const livebookData = [
-            // ... (all livebookData entries remain the same) ...
             {
                 title: "Introduction to Prompt Engineering",
                 description: "Understanding the fundamentals of effective prompt creation.",
@@ -151,7 +146,9 @@
                 read: 0,
                 projects: 30,
                 completed: 1,
-                progress: 0
+                progress: 0,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Front-End Web Development - Fundamentals",
@@ -162,7 +159,9 @@
                 read: 0,
                 projects: 68,
                 completed: 4,
-                progress: 10
+                progress: 10,
+                href: 'fewd.html', // Specific link
+                target: '_self' // Opens in the same tab
             },
             {
                 title: "Problem Solving Using Programming - Fundamentals",
@@ -173,7 +172,9 @@
                 read: 4,
                 projects: 75,
                 completed: 4,
-                progress: 47
+                progress: 47,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "The Breadth of Computer Science - I",
@@ -184,7 +185,9 @@
                 read: 4,
                 projects: 45,
                 completed: 2,
-                progress: 22
+                progress: 22,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Design for Developers",
@@ -195,7 +198,9 @@
                 read: 3,
                 projects: 65,
                 completed: 0,
-                progress: 0
+                progress: 0,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Professional Skills for the Workplace",
@@ -206,7 +211,9 @@
                 read: 5,
                 projects: 31,
                 completed: 1,
-                progress: 36
+                progress: 36,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Critical Thinking 101",
@@ -217,7 +224,9 @@
                 read: 4,
                 projects: 49,
                 completed: 0,
-                progress: 24
+                progress: 24,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Free and Open Source Software",
@@ -228,7 +237,9 @@
                 read: 0,
                 projects: 14,
                 completed: 0,
-                progress: 0
+                progress: 0,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Developing Agents Using GenAI",
@@ -239,7 +250,9 @@
                 read: 0,
                 projects: 35,
                 completed: 0,
-                progress: 0
+                progress: 0,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Graduation to Adulthood",
@@ -250,7 +263,9 @@
                 read: 0,
                 projects: 24,
                 completed: 0,
-                progress: 20
+                progress: 20,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Kalvium Student Handbook",
@@ -261,7 +276,9 @@
                 read: 0,
                 projects: 19,
                 completed: 0,
-                progress: 0
+                progress: 0,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Aptitude",
@@ -272,7 +289,9 @@
                 read: 0,
                 projects: 42,
                 completed: 0,
-                progress: 0
+                progress: 0,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Introduction to Problem Solving for Programming",
@@ -283,7 +302,9 @@
                 read: 0,
                 projects: 47,
                 completed: 0,
-                progress: 0
+                progress: 0,
+                href: '#',
+                target: '_blank'
             },
             {
                 title: "Java 101",
@@ -294,11 +315,12 @@
                 read: 0,
                 projects: 14,
                 completed: 0,
-                progress: 0
+                progress: 0,
+                href: '#',
+                target: '_blank'
             }
         ];
 
-        // Removed references to bookmarkedSection and bookmarkedContainer
         const semesterContainer = document.getElementById('livebook-cards-container');
         const template = document.getElementById('livebook-card-template').innerHTML;
 
@@ -355,8 +377,6 @@
                 const iconFillClass = isBookmarked ? 'fill-red-500' : '';
 
                 // Populate the template
-                // *** FIX IS HERE ***
-                // I've changed the order of replacements.
                 let cardHtml = template
                     // 1. FIRST, specifically replace the onclick placeholder with the escaped title
                     .replace('onclick="toggleBookmark(event, \'[title]\')"', `onclick='toggleBookmark(event, ${escapedTitle})'`) 
@@ -364,7 +384,9 @@
                     // 2. NOW, replace the visible H3 title placeholder
                     .replace('[title]', data.title) 
                     
-                    // ... all other replaces
+                    // 3. ... all other replaces
+                    .replace('[href]', data.href) // Replaces the href
+                    .replace('[target]', data.target) // Replaces the target
                     .replace('[description]', data.description)
                     .replace('[icon]', data.icon)
                     .replace('[iconBgClass]', data.iconBgClass)
@@ -387,8 +409,6 @@
             // Combine the strings, with bookmarked items first, and set the container HTML
             semesterContainer.innerHTML = bookmarkedHtml + semesterHtml;
             
-            // Removed the show/hide logic for the old bookmark section
-            
             // Re-create Lucide icons after dynamic content is added
             lucide.createIcons();
         }
@@ -398,4 +418,3 @@
     </script>
 </body>
 </html>
-

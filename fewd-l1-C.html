@@ -52,6 +52,23 @@
         font-style: italic;
         color: #b91c1c; /* text-red-800 */
       }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Styles for sidebar scroll behavior on LG screens only */
+      @media (min-width: 1024px) { 
+        #lesson-sidebar.sidebar-hidden {
+          opacity: 0;
+          pointer-events: none;
+          transform: translateX(-50px);
+        }
+        #side-tray-btn.tray-visible {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
     </style>
 </head>
 <body class="bg-gradient-to-br from-white to-red-50 font-sans min-h-screen">
@@ -76,36 +93,65 @@
         </div>
     </nav>
 
+    <!-- Side Tray Button (hidden by default, only for lg screens) -->
+    <button id="side-tray-btn" class="fixed top-24 left-4 z-40 p-3 bg-white rounded-full shadow-lg text-red-600 opacity-0 pointer-events-none transition-all duration-300 hidden lg:block">
+        <i data-lucide="sidebar-open" class="w-6 h-6"></i>
+    </button>
+
     <div class="max-w-screen-xl mx-auto p-4 sm:p-6 lg:p-8 flex flex-col lg:flex-row gap-8">
         
         <!-- Sticky Sidebar -->
-        <aside class="w-full lg:w-1/4 lg:sticky top-24 h-fit">
+        <aside id="lesson-sidebar" class="w-full lg:w-1/4 lg:sticky top-24 h-fit transition-all duration-300">
             <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
-                <a href="FEWD.html" class="flex items-center text-sm font-medium text-gray-600 hover:text-red-600 mb-4 transition-colors">
+                <a href="fewd-l1.html" class="flex items-center text-sm font-medium text-gray-600 hover:text-red-600 mb-4 transition-colors">
                     <i data-lucide="chevron-left" class="w-4 h-4 mr-1"></i>
-                    Back to Module 1
+                    Back to Lesson 1.1
                 </a>
-                <h3 class="text-lg font-semibold text-gray-900 mb-4">Module 1: HTML, CSS Basics</h3>
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Lesson 1.1: Course Overview</h3>
                 <nav class="space-y-2">
-                    <a href="fewd-l1.html" class="flex items-center p-3 rounded-xl bg-red-100 text-red-700 font-medium transition-colors hover:bg-red-200">
-                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-red-200 text-red-700 rounded-full mr-3">1.1</span>
-                        Course Overview
+                    <a href="#card-1" class="flex items-center p-3 rounded-xl bg-red-100 text-red-700 font-medium transition-colors hover:bg-red-200">
+                        <span class="text-xs font-semibold text-red-600 w-10">00:00</span>
+                        <span>Welcome!</span>
                     </a>
-                    <a href="#" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
-                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-gray-100 text-gray-600 rounded-full mr-3">1.2</span>
-                        What is Frontend?
+                    <a href="#card-2" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">01:15</span>
+                        <span>Why This Course?</span>
                     </a>
-                    <a href="#" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
-                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-gray-100 text-gray-600 rounded-full mr-3">1.3</span>
-                        Building a Hobbies Page
+                    <a href="#card-3" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">02:30</span>
+                        <span>Course Structure</span>
                     </a>
-                    <a href="#" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
-                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-gray-100 text-gray-600 rounded-full mr-3">1.4</span>
-                        Setting up Environment
+                    <a href="#card-4" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">03:45</span>
+                        <span>Project Activities</span>
                     </a>
-                    <a href="#" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
-                        <span class="flex items-center justify-center w-6 h-6 text-xs font-bold bg-gray-100 text-gray-600 rounded-full mr-3">1.5</span>
-                        Intro to Git & GitHub I
+                    <a href="#card-5" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">04:30</span>
+                        <span>Course Outcomes</span>
+                    </a>
+                    <a href="#card-6" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">05:15</span>
+                        <span>Assessment Pattern</span>
+                    </a>
+                    <a href="#card-7" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">06:00</span>
+                        <span>Project Showcase</span>
+                    </a>
+                    <a href="#card-8" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">06:45</span>
+                        <span>Facing Issues?</span>
+                    </a>
+                    <a href="#card-9" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">07:30</span>
+                        <span>Tips for Learning</span>
+                    </a>
+                    <a href="#card-10" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">08:15</span>
+                        <span>Final Word</span>
+                    </a>
+                    <a href="#card-11" class="flex items-center p-3 rounded-xl text-gray-700 font-medium transition-colors hover:bg-gray-100">
+                        <span class="text-xs font-semibold text-gray-500 w-10">09:00</span>
+                        <span>Quiz Time</span>
                     </a>
                 </nav>
             </div>
@@ -132,7 +178,8 @@
                 </a>
                 
                 <!-- CARD 1: Welcome -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-1" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">00:00</span>
                     <h3>👋 Hey Kalvians, Welcome to FEWD Fundamentals!</h3>
                     <p>We're thrilled to have you on board. From the moment you step into this course, one thing's for sure: <strong>coding starts from Day 1.</strong> 🧑‍💻</p>
                     <p class="highlight">Whether you've never written a line of code or you've dabbled in HTML before, this is your launchpad into the world of Front-End Web Development (FEWD)—where your imagination gets structured, structured, and scripted into real, working webpages.</p>
@@ -145,7 +192,8 @@
                 </div>
 
                 <!-- CARD 2: Why Take This Course? -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-2" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">01:15</span>
                     <h3>💡 Why You Should Take This Course</h3>
                     <p>Because you have ideas worth building!</p>
                     <ul>
@@ -156,7 +204,8 @@
                 </div>
 
                 <!-- CARD 3: Course Structure -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-3" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">02:30</span>
                     <h3>🗺️ Course Structure: What's Inside?</h3>
                     <ul>
                         <li><strong>FEWD Fundamentals</strong> is a 120-hour guided learning journey, combining mentor-led sessions with tons of hands-on practice.</li>
@@ -174,7 +223,8 @@
                 </div>
                 
                 <!-- CARD 4: Project Activities -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-4" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">03:45</span>
                     <h3>🚀 Project Building Activities</h3>
                     <p>Each module ends with a <strong>multi-session mini-project</strong> you'll build from scratch with your mentor. Think:</p>
                     <ul>
@@ -187,7 +237,8 @@
                 </div>
 
                 <!-- CARD 5: Course Outcomes -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-5" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">04:30</span>
                     <h3>🏆 Course Outcomes</h3>
                     <p>By the end of this course, you'll be able to:</p>
                     <ul>
@@ -200,7 +251,8 @@
                 </div>
                 
                 <!-- CARD 6: Assessment Pattern -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-6" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">05:15</span>
                     <h3>📊 Assessment Pattern</h3>
                     <p>After each module, test your skills with:</p>
                     <ul>
@@ -211,7 +263,8 @@
                 </div>
 
                 <!-- CARD 7: Project Showcase -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-7" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">06:00</span>
                     <h3>✨ Project Showcase - What You'll Build</h3>
                     <p>Here's a sneak peek into your milestones and breakthroughs that you'll be building in this course.</p>
                     <p class="text-sm text-gray-500 italic">This is just a reference image for the kinds of projects you'll be able to build.</p>
@@ -221,7 +274,8 @@
                 </div>
 
                 <!-- CARD 8: Facing Issues? -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-8" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">06:45</span>
                     <h3>🤔 Facing Issues? Here's What to Do</h3>
                     <p>It might get tough—but you're not alone. Stay consistent. Keep pushing. Mentors + Team Kalvium = Your Support Squad. 🤝</p>
                     <ul>
@@ -233,7 +287,8 @@
                 </div>
 
                 <!-- CARD 9: Tips for Learning -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-9" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">07:30</span>
                     <h3>⭐ Tips for a Joyful Learning Journey</h3>
                     <ul>
                         <li>Use <strong>Quick Revision Notes</strong> after every lesson</li>
@@ -246,7 +301,8 @@
                 </div>
 
                 <!-- CARD 10: Final Word -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-10" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">08:15</span>
                     <h3>💖 Final Word</h3>
                     <p>These next 120 hours will be packed with:</p>
                     <ul>
@@ -260,7 +316,8 @@
                 </div>
                 
                 <!-- CARD 11: Quiz Time -->
-                <div class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                <div id="card-11" class="bg-white p-6 rounded-2xl shadow-xl shadow-gray-200/60 border border-gray-100">
+                    <span class="float-right text-xs font-semibold text-gray-400">09:00</span>
                     <div class="flex justify-between items-start">
                         <div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-2">It's Quiz Time</h3>
@@ -280,7 +337,7 @@
                                 <button class="bg-red-600 text-white font-medium py-2 px-5 rounded-lg hover:bg-red-700 transition-colors">
                                     Retake Quiz
                                 </button>
-                                <a href="#" class="flex items-center text-sm font-medium text-red-600 hover:text-red-800 transition-colors group">
+                                <a href="#card-2" class="flex items-center text-sm font-medium text-red-600 hover:text-red-800 transition-colors group">
                                     Next: What is Frontend web development?
                                     <i data-lucide="arrow-right" class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform"></i>
                                 </a>
@@ -297,9 +354,52 @@
         </main>
     </div>
 
+    <!-- Modal Dialog for TBH links -->
+    <!-- (This section has been removed as it's no longer used) -->
+
     <script>
         lucide.createIcons();
-        // All animation Javascript has been removed
+        
+        const sidebar = document.getElementById('lesson-sidebar');
+        const trayBtn = document.getElementById('side-tray-btn');
+        const SCROLL_THRESHOLD = 50; // Pixels to scroll before hiding sidebar
+
+        // --- Scroll logic for large screens ---
+        window.addEventListener('scroll', () => {
+            // Check if we are on a large screen (Tailwind's lg breakpoint is 1024px)
+            if (window.innerWidth < 1024) {
+                // On small screens, do nothing. Sidebar scrolls with content.
+                // Ensure sidebar is visible if it was hidden by the tray button
+                sidebar.classList.remove('sidebar-hidden'); 
+                trayBtn.classList.remove('tray-visible');
+                return;
+            }
+
+            // We are on a large screen
+            if (window.scrollY > SCROLL_THRESHOLD) {
+                // Scrolled down - hide sidebar, show tray
+                sidebar.classList.add('sidebar-hidden');
+                trayBtn.classList.add('tray-visible');
+            } else {
+                // At top - show sidebar, hide tray
+                sidebar.classList.remove('sidebar-hidden');
+                trayBtn.classList.remove('tray-visible');
+            }
+        });
+
+        // --- Tray Button logic ---
+        trayBtn.addEventListener('click', () => {
+            // When tray is clicked, show sidebar and hide tray
+            sidebar.classList.remove('sidebar-hidden');
+            trayBtn.classList.remove('tray-visible');
+            // Scroll to top to "dock" the sidebar
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // --- Modal Dialog Logic ---
+        // (This section has been removed as it's no longer used)
     </script>
 </body>
 </html>
+
+
